@@ -1,7 +1,7 @@
 {
   "name": "vue2-sidebar",
-  "version": "0.0.2",
-  "description": "Vue2Sidebar: Vue2 component",
+  "version": "0.0.3",
+  "description": "Vue2Sidebar: Bootstrap 4 sidebar component in Vue 2.0",
   "main": "dist/vue2-sidebar.js",
   "unpkg": "dist/vue2-sidebar.min.js",
   "files": [
@@ -15,6 +15,8 @@
   "keywords": [
     "vue",
     "bootstrap",
+    "bootstrap 4",
+    "Sidebar",
     "Vue2Sidebar",
     "vue2-sidebar"
   ],
@@ -32,7 +34,6 @@
     "build": "node ./node_modules/webpack/bin/webpack.js --hide-modules -p --progress"
   },
   "dependencies": {
-    "bootstrap-vue": "^2.0.0-rc.6"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
