@@ -1,26 +1,129 @@
 <template>
-    <div>
-        Hi from vue2-sidebar. Date is {{date}}!
+    <div class="wrapper">
+        <slot name="sidebar-header"></slot>
+
+        <nav id="sidebar" ref="sidebar">
+            <p class="heading" v-if="heading">Welcome</p>
+            <tree-menu :nodes="links"></tree-menu>
+        </nav>
+
+        <div id="main">
+            <nav class="navbar navbar-expand navbar-light bg-light" v-if="showHeader">
+
+                <a href="#" @click.prevent="toggleSidebar"><span class="navbar-toggler-icon"></span></a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <slot name="header-links">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item" v-for="link in headerLinks">
+                                <a class="nav-link" :href="link.href">
+                                    <i class="fa" :class="{[link.icon]: true}" v-if="link.icon"></i>
+                                    {{link.label}}
+                                </a>
+                            </li>
+                        </ul>
+                    </slot>
+                </div>
+            </nav>
+
+            <div id="content">
+                <slot>
+                    <div v-for="i in 100">
+                        <h3>Lorem Ipsum Dolor</h3>
+
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in
+                            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                </slot>
+            </div>
+        </div>
     </div>
+
 </template>
 
 <script>
-    export default {
-        props: [],
-        created: function () {
-        },
-        mounted: function () {
-            this.load();
-        },
-        methods: {
-            load() {
+    import TreeMenu from './TreeMenu';
 
+    export default {
+        props: {
+            heading: {type: String},
+            links: {type: Array},
+            'show-header': {type: Boolean, default: true},
+            'header-links': {type: Array},
+        },
+        components: {TreeMenu},
+        methods: {
+            toggleSidebar() {
+                this.$refs.sidebar.classList.toggle('active');
             }
         },
         data() {
-            return {
-                date: (new Date()).toDateString(),
-            }
+            return {}
         }
     }
 </script>
+
+<style scoped>
+    .wrapper {
+        display: flex;
+        align-items: stretch;
+    }
+
+    #sidebar {
+        min-width: 250px;
+        max-width: 250px;
+        background: #7386D5;
+        color: #fff;
+        transition: all 0.3s;
+    }
+
+    #sidebar p.heading {
+        padding: 10px 10px 0;
+        font-size: 1.5em;
+    }
+
+    #sidebar.active {
+        margin-left: -250px;
+    }
+
+    #sidebar .sidebar-header {
+        padding: 20px;
+        background: #6d7fcc;
+    }
+
+    #sidebar ul p {
+        color: #fff;
+        padding: 10px;
+    }
+
+    /* ---------------------------------------------------
+        CONTENT STYLE
+    ----------------------------------------------------- */
+    #main {
+        min-height: 100vh;
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+
+    #content {
+        padding: 20px;
+    }
+
+    /* ---------------------------------------------------
+        MEDIAQUERIES
+    ----------------------------------------------------- */
+    @media (max-width: 768px) {
+        #sidebar {
+            margin-left: -250px;
+        }
+
+        #sidebar.active {
+            margin-left: 0;
+        }
+
+        #sidebarCollapse span {
+            display: none;
+        }
+    }
+</style>
