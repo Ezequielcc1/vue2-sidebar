@@ -1,11 +1,15 @@
 # Vue2Sidebar
-> Vue2Sidebar Component for Vue 2.x
+> Vue2Sidebar Component for Vue 2.x. Based on this [tutorial](https://bootstrapious.com/p/bootstrap-sidebar) by Bootstrapious.com
 
 ## Install
 
 ``` bash
     npm install vue2-sidebar --save
 ```
+
+## Demo
+
+For demo, please [see here](https://jsfiddle.net/superasn/mn8g1eud/) 
 
 ## Usage
 

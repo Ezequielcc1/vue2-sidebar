@@ -1,6 +1,6 @@
 {
   "name": "vue2-sidebar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue2Sidebar: Vue2 component",
   "main": "dist/vue2-sidebar.js",
   "unpkg": "dist/vue2-sidebar.min.js",
