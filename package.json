@@ -1,6 +1,6 @@
 {
   "name": "vue2-sidebar",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Vue2Sidebar: Bootstrap 4 sidebar component in Vue 2.0",
   "main": "dist/vue2-sidebar.js",
   "unpkg": "dist/vue2-sidebar.min.js",

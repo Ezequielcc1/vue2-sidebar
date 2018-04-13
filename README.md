@@ -64,7 +64,7 @@ The following slots can be used to customize the sidebar
 
 ## Example
 
-Please see [index.html](examples/index.html) for example use, links format, etc. See the demo link above for the same.
+Please see [App.vue](examples/App.vue) for example use, links format, etc. See the demo link above for the same.
 
 ## Contributing
 Contributions are welcome
