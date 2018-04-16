@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.0.6
+## 0.0.7
 
-fixed flex properties of wrapper
+minor fixes like flex properties of wrapper
 
 ## 0.0.5
 

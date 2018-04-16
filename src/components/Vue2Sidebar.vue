@@ -3,7 +3,7 @@
         <slot name="sidebar-header"></slot>
 
         <nav id="sidebar" ref="sidebar">
-            <p class="heading" v-if="heading">Welcome</p>
+            <p class="heading" v-if="heading" v-html="heading"></p>
             <tree-menu :nodes="links"></tree-menu>
         </nav>
 
