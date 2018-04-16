@@ -26,7 +26,7 @@
                                             {label: 'Home #2.2.2', href: '/home3'},
                                         ]
                                     },
-                                    {label: 'Home #1.3', href: '/home1.3'},
+                                    {label: 'Home #2.3', href: '/home1.3'},
                                 ]
                             },
                             {label: 'Home #3', href: '/home3'},
@@ -44,9 +44,9 @@
                             {label: 'Header #2.1', href: '#/header21'},
                             {label: 'Header #2.2', href: '#/header22'},
                             {separator: true},
-                            {label: 'Header #2.3', href: '#/header23'},
+                            {label: 'Header #2.13', href: '#/header23'},
                         ]},
-                    {label: 'Header #3', href: '#/header3', icon: 'fa-glass'},
+                    {label: 'Header #5', href: '#/header3', icon: 'fa-glass'},
                 ],
             }
         },

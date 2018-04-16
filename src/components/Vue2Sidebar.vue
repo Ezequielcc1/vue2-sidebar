@@ -77,6 +77,7 @@
     .wrapper {
         display: flex;
         align-items: stretch;
+        width: 100%;
     }
 
     #sidebar {
@@ -111,7 +112,7 @@
     ----------------------------------------------------- */
     #main {
         min-height: 100vh;
-        width: 100%;
+        flex-grow: 1;
         transition: all 0.3s ease;
     }
 
