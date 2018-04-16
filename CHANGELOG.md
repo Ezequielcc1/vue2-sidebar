@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8
+
+Added support for Vue Router
+
 ## 0.0.7
 
 minor fixes like flex properties of wrapper

@@ -20,14 +20,11 @@
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{link.label}}</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <div v-for="item in link.links" :class="{'dropdown-divider': item.separator}">
-                                            <a v-if="!item.separator" class="dropdown-item" :href="item.href">{{item.label}}</a>
+                                            <dyna-link :link="item" v-if="!item.separator" class="dropdown-item"></dyna-link>
                                         </div>
                                     </div>
                                 </template>
-                                <a class="nav-link" :href="link.href" v-else>
-                                    <i class="fa" :class="{[link.icon]: true}" v-if="link.icon"></i>
-                                    {{link.label}}
-                                </a>
+                                <dyna-link :link="link" class="nav-link" v-else></dyna-link>
                             </li>
                         </ul>
                     </slot>
@@ -53,6 +50,7 @@
 
 <script>
     import TreeMenu from './TreeMenu';
+    import DynaLink from "./DynaLink";
 
     export default {
         props: {
@@ -61,7 +59,7 @@
             'show-header': {type: Boolean, default: true},
             'header-links': {type: Array},
         },
-        components: {TreeMenu},
+        components: {DynaLink, TreeMenu},
         methods: {
             toggleSidebar() {
                 this.$refs.sidebar.classList.toggle('active');

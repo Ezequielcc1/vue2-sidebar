@@ -1,10 +1,10 @@
 <template>
-    <ul class="list-unstyled" :class="className || 'components'">
+    <ul class="tree list-unstyled" :class="className || 'components'">
         <li v-for="(node, i) in nodes" :class="{[node.class]: true, cta: node.type === 'button', separator: node.separator}">
             <template v-if="!node.links">
                 <template v-if="!node.separator">
-                    <i class="icon fa fa-fw" :class="{[node.icon]: true}" v-if="node.icon"></i>
-                    <a :href="node.href" v-html="node.label"></a>
+                    <!--<i class="icon fa fa-fw" :class="{[node.icon]: true}" v-if="node.icon"></i>-->
+                    <dyna-link :link="node"></dyna-link>
                 </template>
             </template>
             <template v-else>
@@ -17,11 +17,12 @@
 
 <script>
     import TreeMenu from './TreeMenu';
+    import DynaLink from "./DynaLink";
 
     export default {
         name: 'tree-menu',
         props: {nodes: {type: Array}, className: {type: String}, level: {type: Number, default: 0}},
-        components: {TreeMenu},
+        components: {DynaLink, TreeMenu},
         methods: {
             slug(i) {
                 return 'node-' + this.level + '-' + i;
@@ -115,9 +116,13 @@
         color: #7386D5;
     }
 
-    .icon {
+    .tree >>> .icon {
         position: absolute;
         right: 15px;
         top: 15px;
+    }
+
+    >>> a.active {
+        background: #98aaff;
     }
 </style>

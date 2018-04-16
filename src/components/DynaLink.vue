@@ -1,0 +1,18 @@
+<template>
+    <div :is="isRoute ? 'router-link' : 'a'" :href="link.href" :to="link.path" :replace="link.replace"
+    active-class="active">
+        <i class="icon fa fa-fw" :class="{[link.icon]: true}" v-if="link.icon"></i>
+        {{link.label}}
+    </div>
+</template>
+
+<script>
+    export default {
+        props: ['link'],
+        computed: {
+            isRoute() {
+                return this.$router && (this.link.path || this.link.component);
+            }
+        }
+    }
+</script>
