@@ -15,8 +15,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <slot name="header-links">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item" v-for="link in headerLinks">
-                                <a class="nav-link" :href="link.href">
+                            <li v-for="link in headerLinks" class="nav-item" :class="{dropdown: !!link.links}">
+                                <template v-if="link.links">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{link.label}}</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <div v-for="item in link.links" :class="{'dropdown-divider': item.separator}">
+                                            <a v-if="!item.separator" class="dropdown-item" :href="item.href">{{item.label}}</a>
+                                        </div>
+                                    </div>
+                                </template>
+                                <a class="nav-link" :href="link.href" v-else>
                                     <i class="fa" :class="{[link.icon]: true}" v-if="link.icon"></i>
                                     {{link.label}}
                                 </a>
@@ -32,7 +40,8 @@
                         <h3>Lorem Ipsum Dolor</h3>
 
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in
+                            type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
+                            in
                             the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     </div>
                 </slot>
