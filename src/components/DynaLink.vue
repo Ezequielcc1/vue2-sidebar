@@ -1,6 +1,6 @@
 <template>
     <div :is="isRoute ? 'router-link' : 'a'" :href="link.href" :to="link.path" :replace="link.replace"
-    active-class="active">
+         :active-class="'parent-active'" :exact-active-class="'active'">
         <i class="icon fa fa-fw" :class="{[link.icon]: true}" v-if="link.icon"></i>
         {{link.label}}
     </div>

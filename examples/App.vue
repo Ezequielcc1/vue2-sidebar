@@ -43,7 +43,7 @@
                     {label: 'Link #3', path: '/link3', class: 'list-group-item-danger'},
                     {label: 'Link #4', href: '/link4'},
                     {label: 'Router', path: '/foo'},
-                    {label: 'Link #6', href: '/#test', type: 'button'},
+                    {label: 'Link #6', href: '/#test', button: true},
                 ],
                 header: [
                     {label: 'Header #1', path: '/foo'},
@@ -55,7 +55,7 @@
                             {label: 'Header #2.13', href: '#/header23'},
                         ]
                     },
-                    {label: 'Header #5', href: '#/header3', icon: 'fa-glass'},
+                    {label: 'Header #5', href: '#/header3', icon: 'fa-glass', button: true},
                 ],
             }
         },

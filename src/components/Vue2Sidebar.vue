@@ -18,13 +18,13 @@
                             <li v-for="link in headerLinks" class="nav-item" :class="{dropdown: !!link.links}">
                                 <template v-if="link.links">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{link.label}}</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <div v-for="item in link.links" :class="{'dropdown-divider': item.separator}">
                                             <dyna-link :link="item" v-if="!item.separator" class="dropdown-item"></dyna-link>
                                         </div>
                                     </div>
                                 </template>
-                                <dyna-link :link="link" class="nav-link" v-else></dyna-link>
+                                <dyna-link :link="link" :class="{'nav-link': !link.button, ['btn btn-sm my-sm-1 ' + (link.buttonClass || 'btn-success')]: link.button}" v-else></dyna-link>
                             </li>
                         </ul>
                     </slot>

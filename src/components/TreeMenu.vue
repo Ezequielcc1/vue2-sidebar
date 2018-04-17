@@ -1,6 +1,6 @@
 <template>
     <ul class="tree list-unstyled" :class="className || 'components'">
-        <li v-for="(node, i) in nodes" :class="{[node.class]: true, cta: node.type === 'button', separator: node.separator}">
+        <li v-for="(node, i) in nodes" :class="{[node.class]: node.class, cta: node.button, separator: node.separator}">
             <template v-if="!node.links">
                 <template v-if="!node.separator">
                     <!--<i class="icon fa fa-fw" :class="{[node.icon]: true}" v-if="node.icon"></i>-->
