@@ -66,8 +66,20 @@ The following slots can be used to customize the sidebar
 
 Please see [App.vue](examples/App.vue) for example use, links format, etc. See the demo link above for the same.
 
+## IMPORTANT
+
+Please make sure to **[Star this project](https://github.com/san-kumar/vue2-sidebar)** on github so I know you are using it - because when I see people using it, it makes me motivated to add new features and maintain it actively :) 
+
+## Suggestions
+
+Please email me on lambdaphp@gm...com with your feature ideas and suggestions!
+
 ## Contributing
-Contributions are welcome
+Contributions and PRs are welcome. 
+
+## Ideas implemented so far..
+
+Please see [here](CHANGELOG.md)
 
 ## Build Setup
 

@@ -1,5 +1,5 @@
 <template>
-    <div :is="isRoute ? 'router-link' : 'a'" :href="link.href" :to="link.path" :replace="link.replace"
+    <div :is="isRoute ? 'router-link' : 'a'" :href="link.href" :to="link.to" :replace="link.replace"
          :active-class="'parent-active'" :exact-active-class="'active'">
         <i class="icon fa fa-fw" :class="{[link.icon]: true}" v-if="link.icon"></i>
         {{link.label}}
@@ -11,7 +11,7 @@
         props: ['link'],
         computed: {
             isRoute() {
-                return this.$router && (this.link.path || this.link.component);
+                return this.$router && (this.link.to || this.link.component);
             }
         }
     }
